@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Divyesh Savaliya — Projects</title>
+  <meta name="description" content="Three reproducible DS/ML projects with runnable commands and downloads. No dates displayed." />
+  <style>
+    :root{
+      --bg: #0b0c10;
+      --card: #111319;
+      --muted: #9aa3b2;
+      --text: #e8edf2;
+      --brand: #5b9cff;
+      --brand-2: #7ee787;
+      --accent: #fbd38d;
+      --border: #232634;
+      --shadow: 0 10px 24px rgba(0,0,0,.25);
+      --radius: 16px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#fafafa; --card:#ffffff; --text:#0f172a; --muted:#475569; --border:#e5e7eb; --shadow:0 10px 24px rgba(15,23,42,.06)
+      }
+    }
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:8px 0 20px}
+    .title{display:flex;align-items:center;gap:14px}
+    .avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#fff;font-weight:700}
+    h1{font-size:24px;letter-spacing:.2px;margin:0}
+    .sub{color:var(--muted);font-size:14px;margin-top:4px}
+    nav{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:1px solid var(--border);border-radius:999px;padding:8px 12px;background:var(--card)}
+    main{display:grid;gap:22px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    .card h2{margin-top:0;font-size:20px}
+    .grid{display:grid;gap:18px}
+    @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
+    .meta{color:var(--muted);font-size:14px;margin:6px 0 14px}
+    ul{margin:10px 0 0 20px}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:12px;padding:10px 14px;background:var(--card);transition:transform .04s ease}
+    .btn.primary{background:var(--brand);color:#fff;border-color:transparent}
+    .btn.green{background:var(--brand-2);color:#052e16;border-color:transparent}
+    .btn:hover{transform:translateY(-1px)}
+    pre{position:relative;background:#0b1020;color:#e5e7eb;border:1px solid var(--border);border-radius:12px;padding:14px;overflow:auto}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .copy{position:absolute;top:8px;right:8px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);border-radius:8px;padding:6px 8px;font-size:12px;cursor:pointer}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+    .kpi{border:1px dashed var(--border);border-radius:12px;padding:10px;text-align:center}
+    .kpi b{display:block;font-size:18px}
+    footer{opacity:.9;color:var(--muted);margin:10px 0 40px}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <a class="muted" href="#content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <div class="avatar" aria-hidden="true">DS</div>
+        <div>
+          <h1>Divyesh Savaliya — Projects</h1>
+          <div class="sub">Three reproducible case studies. Clean, date‑free presentation.</div>
+        </div>
+      </div>
+      <nav>
+        <a class="chip" href="#t2i">Text‑to‑Image (TensorFlow)</a>
+        <a class="chip" href="#xgb">Energy Forecasting (XGBoost)</a>
+        <a class="chip" href="#imdb">IMDB Sentiment (BERT)</a>
+      </nav>
+    </header>
+
+    <main id="content">
+
+      <!-- Text-to-Image -->
+      <section class="card" id="t2i">
+        <div class="grid">
+          <div>
+            <h2>Text‑to‑Image Synthesis with TensorFlow</h2>
+            <p class="meta">Paired text–image pipeline with caption tokenisation, normalisation/augmentation, and a conditional GAN baseline. Ablated attention/regularisation; evaluated with FID and Inception Score; curated qualitative grids and failure‑modes.</p>
+            <p><b>Stack.</b> TensorFlow, Python, CUDA • CUB‑200/Captions • FID/IS tooling.</p>
+            <ul>
+              <li>End‑to‑end <em>caption → GAN</em> training with reproducible configs.</li>
+              <li>Ablations: attention variants, spectral/gradient regularisation.</li>
+              <li>Quantitative: FID/IS. Qualitative: grids + failure notes.</li>
+            </ul>
+            <div class="btns">
+              <a class="btn primary" href="https://example.com/downloads/t2i_project.zip">⬇️ Download ZIP</a>
+              <a class="btn" href="https://example.com/reports/t2i_report.pdf" target="_blank" rel="noopener">📄 Report (PDF)</a>
+              <a class="btn" href="#" onclick="alert('Demo placeholder');return false;">▶️ Demo</a>
+            </div>
+            <div class="kpis" aria-label="Key results">
+              <div class="kpi"><b>FID</b><span class="muted">xx.x</span></div>
+              <div class="kpi"><b>IS</b><span class="muted">x.xx</span></div>
+              <div class="kpi"><b>Params</b><span class="muted">~xx M</span></div>
+            </div>
+          </div>
+          <div>
+            <pre><button class="copy" data-copy="pip install -r env/requirements.txt && python scripts/train.py --data cub --epochs 200">Copy</button><code>pip install -r env/requirements.txt
+python scripts/train.py --data cub --epochs 200
+python scripts/compute_fid.py --images runs/cub/samples</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- XGBoost -->
+      <section class="card" id="xgb">
+        <div class="grid">
+          <div>
+            <h2>Time‑series Forecasting with XGBoost (Energy)</h2>
+            <p class="meta">Energy‑usage forecasting with calendar features, lags, and rolling stats; compared ARIMA/Prophet baselines; time‑aware CV with SHAP feature inspection and residual diagnostics.</p>
+            <p><b>Stack.</b> Python, XGBoost, Pandas, SHAP • PJM/Kaggle data.</p>
+            <ul>
+              <li>Walk‑forward validation; error by hour/weekday/season.</li>
+              <li>SHAP importance/stability plots for interpretability.</li>
+              <li>Reproducible notebooks and command‑line scripts.</li>
+            </ul>
+            <div class="btns">
+              <a class="btn primary" href="https://example.com/downloads/xgb_energy.zip">⬇️ Download ZIP</a>
+              <a class="btn" href="https://example.com/reports/xgb_energy_report.pdf" target="_blank" rel="noopener">📄 Report (PDF)</a>
+            </div>
+            <div class="kpis">
+              <div class="kpi"><b>MAE</b><span class="muted">xx.x</span></div>
+              <div class="kpi"><b>MAPE</b><span class="muted">x.xx%</span></div>
+              <div class="kpi"><b>Horizon</b><span class="muted">24 h</span></div>
+            </div>
+          </div>
+          <div>
+            <pre><button class="copy" data-copy="pip install -r env/requirements.txt && python scripts/train_xgb.py --series PJM --h 24">Copy</button><code>pip install -r env/requirements.txt
+python scripts/train_xgb.py --series PJM --h 24
+python scripts/evaluate.py --series PJM --plots</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMDB -->
+      <section class="card" id="imdb">
+        <div class="grid">
+          <div>
+            <h2>Sentiment Analysis on IMDB (Classical vs BERT)</h2>
+            <p class="meta">End‑to‑end NLP pipeline: cleaning, tokenisation, class‑imbalance handling; classical models (Naïve Bayes, SVM) vs fine‑tuned BERT in PyTorch with stratified CV.</p>
+            <p><b>Stack.</b> PyTorch, 🤗 Transformers, scikit‑learn • IMDB 50k.</p>
+            <ul>
+              <li>Baselines: NB/SVM; Transformer fine‑tuning in a few epochs.</li>
+              <li>Precision/Recall/F1; confusion matrix; saliency/word‑importance.</li>
+              <li>One‑command setup; cached datasets; reproducible seeds.</li>
+            </ul>
+            <div class="btns">
+              <a class="btn primary" href="https://example.com/downloads/imdb_sentiment.zip">⬇️ Download ZIP</a>
+              <a class="btn" href="https://example.com/reports/imdb_sentiment_report.pdf" target="_blank" rel="noopener">📄 Report (PDF)</a>
+            </div>
+            <div class="kpis">
+              <div class="kpi"><b>Acc</b><span class="muted">xx.xx%</span></div>
+              <div class="kpi"><b>F1</b><span class="muted">x.xx</span></div>
+              <div class="kpi"><b>Epochs</b><span class="muted">3</span></div>
+            </div>
+          </div>
+          <div>
+            <pre><button class="copy" data-copy="pip install -r env/requirements.txt && python scripts/train_bert.py --dataset imdb --epochs 3">Copy</button><code>pip install -r env/requirements.txt
+python scripts/prep_text.py --dataset imdb
+python scripts/train_nb_svm.py --dataset imdb
+python scripts/train_bert.py --dataset imdb --epochs 3</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reproducibility -->
+      <section class="card" id="repro">
+        <h2>Reproducibility</h2>
+        <ul>
+          <li>Each download contains <code>README.md</code>, <code>/src</code>, <code>/scripts</code>, <code>/notebooks</code>, <code>/reports</code>, and <code>/env</code> with <code>requirements.txt</code> or <code>environment.yml</code>.</li>
+          <li>Python 3.11 tested; deterministic seeds; CPU‑only fallback where possible.</li>
+          <li>These pages intentionally omit dates. Reports indicate when work was conducted vs. when code was cleaned and released.</li>
+        </ul>
+        <div class="btns">
+          <a class="btn green" href="#contact">📬 Contact</a>
+        </div>
+      </section>
+
+      <section class="card" id="contact">
+        <h2>Contact</h2>
+        <p class="meta">Questions or access to private artefacts? Happy to share on request.</p>
+        <p>Email: <a href="mailto:divyesh.savaliya@example.com">divyesh.savaliya@example.com</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© Divyesh Savaliya — simple, self‑hosted project portfolio. No trackers, no cookies, no dates.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Copy buttons for code blocks
+    document.querySelectorAll('.copy').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const text = btn.getAttribute('data-copy') || btn.nextElementSibling.textContent;
+        navigator.clipboard.writeText(text).then(()=>{
+          const prev = btn.textContent; btn.textContent='Copied';
+          setTimeout(()=>btn.textContent=prev, 900);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
