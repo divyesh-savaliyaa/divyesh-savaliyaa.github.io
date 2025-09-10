@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Divyesh Savaliya — Projects</title>
+  <meta name="description" content="Three reproducible DS/ML projects with runnable commands and downloads. No dates displayed." />
+  <style>
+    :root{
+      --bg: #eef2f7; --bg2:#f7f9fc; --text:#0f172a; --muted:#475569; --card:#ffffff; --border:#e6eaf2; --brand:#6c63ff; --brand-2:#7ee787; --shadow:0 12px 30px rgba(2,6,23,.08), 0 2px 6px rgba(2,6,23,.06); --radius:22px;
+    }
+    .dark{ --bg:#0b0e14; --bg2:#0f1320; --text:#e5ecfa; --muted:#99a3b3; --card:#0f1320; --border:#202536; --shadow:0 12px 30px rgba(0,0,0,.45), 0 2px 6px rgba(0,0,0,.25); }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 800px at 10% -10%, var(--bg2), var(--bg)) fixed; color:var(--text); font:16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";}
+    .wrap{max-width:980px;margin:0 auto;padding:32px 24px 56px}
+
+    /* top bar */
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .left{display:flex;align-items:center;gap:10px}
+    .back{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:999px;background:var(--card);box-shadow:var(--shadow);padding:8px 12px;text-decoration:none;color:inherit}
+    .title{font-weight:800;letter-spacing:.2px}
+    .mode{width:44px;height:44px;border:1px solid var(--border);border-radius:999px;background:var(--card);box-shadow:var(--shadow);display:grid;place-items:center;cursor:pointer}
+    .mode svg{width:18px;height:18px;opacity:.9}
+
+    /* cards */
+    main{display:grid;gap:22px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+    .card h2{margin:0 0 6px;font-size:22px}
+    .meta{color:var(--muted);font-size:14px;margin:6px 0 14px}
+    .grid{display:grid;gap:18px}
+    @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
+    ul{margin:10px 0 0 20px}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:14px;padding:10px 14px;background:var(--card);text-decoration:none;color:inherit;transition:transform .04s ease}
+    .btn.primary{background:var(--brand);color:#fff;border-color:transparent}
+    .btn.green{background:var(--brand-2);color:#052e16;border-color:transparent}
+    .btn:hover{transform:translateY(-1px)}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+    .kpi{border:1px dashed var(--border);border-radius:12px;padding:10px;text-align:center}
+    .kpi b{display:block;font-size:18px}
+    pre{position:relative;background:#0b1020;color:#e5e7eb;border:1px solid var(--border);border-radius:12px;padding:14px;overflow:auto}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .copy{position:absolute;top:8px;right:8px;border:1px solid var(--border);background:rgba(255,255,255,.06);color:#fff;border-radius:8px;padding:6px 8px;font-size:12px;cursor:pointer}
+    footer{opacity:.9;color:var(--muted);margin:20px 0 0;text-align:center}
+  </style>
+</head>
+<body>
+  <a class="sr" href="#content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <div class="left">
+        <a class="back" href="/" aria-label="Back to home">⬅︎ Home</a>
+        <div class="title">Projects</div>
+      </div>
+      <button class="mode" id="modeBtn" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg id="modeIcon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 1 0 21 12.79z"/></svg>
+      </button>
+    </header>
+
+    <main id="content">
+      <!-- Text-to-Image -->
+      <section class="card" id="t2i">
+        <div class="grid">
+          <div>
+            <h2>Text‑to‑Image Synthesis with TensorFlow</h2>
+            <p class="meta">Paired text–image pipeline with caption tokenisation, normalisation/augmentation, and a conditional GAN baseline. Ablated attention/regularisation; evaluated with FID and Inception Score; curated qualitative grids and failure‑modes.</p>
+            <p><b>Stack.</b> TensorFlow, Python, CUDA • CUB‑200/Captions • FID/IS tooling.</p>
+            <ul>
+              <li>End‑to‑end <em>caption → GAN</em> training with reproducible configs.</li>
+              <li>Ablations: attention variants, spectral/gradient regularisation.</li>
+              <li>Quantitative: FID/IS. Qualitative: grids + failure notes.</li>
+            </ul>
+            <div class="btns">
+              <a class="btn primary" href="/downloads/t2i_project.zip" download>⬇️ Download ZIP</a>
+              <a class="btn" href="/reports/t2i_report.pdf" target="_blank" rel="noopener">📄 Report (PDF)</a>
+              <a class="btn green" href="#" onclick="alert('Demo placeholder');return false;">▶️ Demo</a>
+            </div>
+            <div class="kpis" aria-label="Key results">
+              <div class="kpi"><b>FID</b><span class="meta">xx.x</span></div>
+              <div class="kpi"><b>IS</b><span class="meta">x.xx</span></div>
+              <div class="kpi"><b>Params</b><span class="meta">~xx M</span></div>
+            </div>
+          </div>
+          <div>
+            <pre><button class="copy" data-copy="pip install -r env/requirements.txt && python scripts/train.py --data cub --epochs 200">Copy</button><code>pip install -r env/requirements.txt
+python scripts/train.py --data cub --epochs 200
+python scripts/compute_fid.py --images runs/cub/samples</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- XGBoost energy forecasting -->
+      <section class="card" id="xgb">
+        <div class="grid">
+          <div>
+            <h2>Time‑series Forecasting with XGBoost (Energy)</h2>
+            <p class="meta">Energy‑usage forecasting with calendar features, lags, and rolling stats; compared ARIMA/Prophet baselines; time‑aware CV with SHAP feature inspection and residual diagnostics.</p>
+            <p><b>Stack.</b> Python, XGBoost, Pandas, SHAP • PJM/Kaggle data.</p>
+            <ul>
+              <li>Walk‑forward validation; error by hour/weekday/season.</li>
+              <li>SHAP importance/stability plots for interpretability.</li>
+              <li>Reproducible notebooks and command‑line scripts.</li>
+            </ul>
+            <div class="btns">
+              <a class="btn primary" href="/downloads/ts_xgboost_project.zip" download>⬇️ Download ZIP</a>
+              <a class="btn" href="/reports/xgb_energy_report.pdf" target="_blank" rel="noopener">📄 Report (PDF)</a>
+            </div>
+            <div class="kpis">
+              <div class="kpi"><b>MAE</b><span class="meta">xx.x</span></div>
+              <div class="kpi"><b>MAPE</b><span class="meta">x.xx%</span></div>
+              <div class="kpi"><b>Horizon</b><span class="meta">24 h</span></div>
+            </div>
+          </div>
+          <div>
+            <pre><button class="copy" data-copy="pip install -r env/requirements.txt && python scripts/train_xgb.py --series PJM --h 24">Copy</button><code>pip install -r env/requirements.txt
+python scripts/train_xgb.py --series PJM --h 24
+python scripts/evaluate.py --series PJM --plots</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMDB sentiment -->
+      <section class="card" id="imdb">
+        <div class="grid">
+          <div>
+            <h2>Sentiment Analysis on IMDB (Classical vs BERT)</h2>
+            <p class="meta">End‑to‑end NLP pipeline: cleaning, tokenisation, class‑imbalance handling; classical models (Naïve Bayes, SVM) vs fine‑tuned BERT in PyTorch with stratified CV.</p>
+            <p><b>Stack.</b> PyTorch, 🤗 Transformers, scikit‑learn • IMDB 50k.</p>
+            <ul>
+              <li>Baselines: NB/SVM; Transformer fine‑tuning in a few epochs.</li>
+              <li>Precision/Recall/F1; confusion matrix; saliency/word‑importance.</li>
+              <li>One‑command setup; cached datasets; reproducible seeds.</li>
+            </ul>
+            <div class="btns">
+              <a class="btn primary" href="/downloads/imdb_sentiment_project.zip" download>⬇️ Download ZIP</a>
+              <a class="btn" href="/reports/imdb_sentiment_report.pdf" target="_blank" rel="noopener">📄 Report (PDF)</a>
+            </div>
+            <div class="kpis">
+              <div class="kpi"><b>Acc</b><span class="meta">xx.xx%</span></div>
+              <div class="kpi"><b>F1</b><span class="meta">x.xx</span></div>
+              <div class="kpi"><b>Epochs</b><span class="meta">3</span></div>
+            </div>
+          </div>
+          <div>
+            <pre><button class="copy" data-copy="pip install -r env/requirements.txt && python scripts/train_bert.py --dataset imdb --epochs 3">Copy</button><code>pip install -r env/requirements.txt
+python scripts/prep_text.py --dataset imdb
+python scripts/train_nb_svm.py --dataset imdb
+python scripts/train_bert.py --dataset imdb --epochs 3</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reproducibility note -->
+      <section class="card" id="repro">
+        <h2>Reproducibility</h2>
+        <ul>
+          <li>Each download contains <code>README.md</code>, <code>/src</code>, <code>/scripts</code>, <code>/notebooks</code>, <code>/reports</code>, and <code>/env</code> with <code>requirements.txt</code> or <code>environment.yml</code>.</li>
+          <li>Python 3.11 tested; deterministic seeds; CPU‑only fallback where possible.</li>
+          <li>No dates shown on this page. Reports note when work was done vs when code was cleaned and released.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>© <span id="year"></span> Divyesh Savaliya — simple, self‑hosted project portfolio. No trackers, no cookies, no dates.</footer>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // dark mode persistence (shared with home)
+    const root = document.documentElement;
+    const btn = document.getElementById('modeBtn');
+    const icon = document.getElementById('modeIcon');
+    const setMode = (m)=>{
+      if(m==='dark'){root.classList.add('dark'); icon.innerHTML='<path d="M12 3a9 9 0 1 0 9 9c0-.34-.02-.67-.06-1A7 7 0 0 1 12 3z"/>';}
+      else{root.classList.remove('dark'); icon.innerHTML='<path d="M12 4a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 13a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1zm7-5a1 1 0 0 1 1 1h2a1 1 0 1 1 0 2h-2a1 1 0 1 1-2 0 1 1 0 0 1 1-1zm-16 0a1 1 0 0 1 1 1H2a1 1 0 1 1 0-2h2a1 1 0 0 1-1 1zm11.66 6.66a1 1 0 0 1 1.41 0l1.41 1.41a1 1 0 1 1-1.41 1.41l-1.41-1.41a1 1 0 0 1 0-1.41zM5.93 5.93a1 1 0 0 1 1.41 0L8.75 7.34a1 1 0 1 1-1.41 1.41L5.93 7.34a1 1 0 0 1 0-1.41zm10.83 0a1 1 0 0 1 0 1.41L15.35 8.75a1 1 0 1 1-1.41-1.41l1.41-1.41a1 1 0 0 1 1.41 0zM7.34 15.35a1 1 0 0 1 1.41 0l1.41 1.41a1 1 0 1 1-1.41 1.41L7.34 16.76a1 1 0 0 1 0-1.41z"/>';}
+      localStorage.setItem('mode', m);
+    };
+    setMode(localStorage.getItem('mode')|| (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light'));
+    btn.addEventListener('click',()=>{setMode(root.classList.contains('dark')?'light':'dark')});
+
+    // copy buttons on code blocks
+    document.querySelectorAll('.copy').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const text = btn.getAttribute('data-copy') || btn.nextElementSibling.textContent;
+        navigator.clipboard.writeText(text).then(()=>{
+          const prev = btn.textContent; btn.textContent='Copied';
+          setTimeout(()=>btn.textContent=prev, 900);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
